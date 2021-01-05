@@ -36,7 +36,7 @@ public class GlobalExceptionHandler {
 
 		ErrorDetails errorDetails = new ErrorDetails(new Date(), exception.getMessage(), request.getDescription(false));
 
-		return new ResponseEntity(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
+		return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
 	// handling custom validation errors
@@ -44,7 +44,7 @@ public class GlobalExceptionHandler {
 	public ResponseEntity<?> customeValidationErrorHandling(MethodArgumentNotValidException exception){
 		ErrorDetails details=new ErrorDetails(new Date(), "validation Error", 
 				exception.getBindingResult().getFieldError().getDefaultMessage());
-		return new ResponseEntity(details, HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<>(details, HttpStatus.BAD_REQUEST);
 		
 		
 		

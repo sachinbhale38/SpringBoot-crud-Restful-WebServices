@@ -45,6 +45,7 @@ public class UserController {
 	// get user by id
 	@GetMapping("/{id}")
 	public UserDetails getUserById(@PathVariable(value = "id") long userId) {
+		System.err.println("getting user with id :" +userId);
 		return userService.getUserById(userId);
 
 	}
