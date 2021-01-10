@@ -23,6 +23,9 @@ import com.ingecno.exception.ResourceNotFoundException;
 import com.ingecno.repository.RegisterRepository;
 import com.ingecno.service.LoginService;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+
 @RestController
 @CrossOrigin
 @RequestMapping("/api/login")
@@ -34,7 +37,9 @@ public class LoginController {
 	@Autowired
 	private LoginService loginService;
 
-	@GetMapping
+	 @ApiOperation("Get all Registered Users")
+	 @ApiResponse(code = 200, message = "ok", response = Register.class, responseContainer = "List")
+	@GetMapping(produces = "application/json")
 	public List<Register> getAllUsers() {
 	
 		return loginService.getAllUsers();
@@ -64,7 +69,7 @@ public class LoginController {
 
 	}
 
-	// create User
+	// get User
 	@GetMapping("/{email}/{password}")
 	public HashMap createUser(@Valid @PathVariable String email, @PathVariable String password) {
 

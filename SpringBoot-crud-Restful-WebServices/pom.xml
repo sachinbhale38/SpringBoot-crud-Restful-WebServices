@@ -8,7 +8,7 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.3.3.RELEASE</version>
 		<relativePath />
-		 <!-- lookup parent from repository -->
+		<!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ingecno</groupId>
 	<artifactId>SpringBoot-crud-Restful-WebServices</artifactId>
@@ -31,6 +31,12 @@
 			<groupId>org.hibernate.validator</groupId>
 			<artifactId>hibernate-validator</artifactId>
 			<version>6.1.2.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>3.0.0</version>
 		</dependency>
 
 
@@ -67,7 +73,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		
+
 		</dependency>
 	</dependencies>
 
